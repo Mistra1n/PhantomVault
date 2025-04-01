@@ -1,27 +1,110 @@
-# 🔐 PhantomVault - Advanced Steganography Toolkit
+# 🔐 PhantomVault - Advanced Steganography Toolkit  
+*Hide messages in images, audio, and PDFs with military-grade encryption* 
 
-![Demo](examples/demo.gif)  
-*Hide messages in images, audio, and PDFs with military-grade encryption*
+## 🌟 Features  
+- **Multi-format stealth** - Hide data in PNGs, WAV audio, and PDF metadata  
+- **AES-256 + RSA encryption** - Automatic key generation with `-x` flag  
+- **Zero footprint** - No visible file size or quality changes  
+- **Dual interfaces** - Graphical UI and command-line support 
+## Installation
 
----
+Use the package manager [pip](https://pip.pypa.io/en/stable/) to install foobar.
 
-## 🌟 Features
-
-- **Multi-format support**  
-  🖼️ Images (PNG/BMP) | 🔊 Audio (WAV) | 📄 PDF Metadata  
-- **End-to-end encryption**  
-  🔑 AES-256 + RSA hybrid | Automatic key generation  
-- **Dual interfaces**  
-  🖥️ Graphical UI (Tkinter) | 💻 Command Line  
-- **Stealth technology**  
-  🔒 Zero file size changes | 🕵️‍♂️ No visible artifacts  
-
----
-
-## 🚀 Quick Start
-
-### Installation
 ```bash
 git clone https://github.com/mistra1n/PhantomVault.git
 cd PhantomVault
 pip install -r requirements.txt
+```
+
+## GUI
+
+```python
+python src/gui_app.py  
+```
+Steps:
+
+1 **Select mode (Encode/Decode)**
+
+2 **Choose file type**
+
+3 **Input secret message or load file**
+
+4 **Toggle encryption**
+
+GUI Screenshot
+## CLI
+
+```python 
+# Encode with encryption  
+python src/stego.py -e -t image -i cat.png -o secret.png -m "Kenya Zimmerman" -x  
+
+# Decode  
+python src/stego.py -d -t image -i secret.png -k YOUR_KEY  
+```
+## Usage
+
+```python
+# Encode a message into an image
+python src/gui_app.py  # Graphical mode
+
+# Or use CLI:
+python src/stego.py -e -t image -i input.png -o secret.png -m "My secret" --encrypt
+```
+## Usage Guide
+**Supported  Formats**
+___
+**Format**...............**Requirements**...................Max Capacity**
+
+**Images**...............**PNG/BMP, 24-bit**..............**3 bits per pixel**
+
+**Audio**................	**WAV,16-bit mono**	...........**1KB per second**
+
+**PDF**.....................**Unencrypted**....................	**Metadata only**
+
+## Command Reference
+
+**Flag**	******Description's******
+
+**-e	______Encode mode**
+
+**-d	______Decode mode**
+
+**-t	______Type (image,audio,pdf)**
+
+**-i	______Input file path**
+
+**-o	______Output file path**
+
+**-m	______Message to hide**
+
+**-x	______Enable encryption**
+
+
+**-k	______Decryption key**
+
+
+
+## ⚠️ Legal Disclaimer
+This tool is for authorized security testing and educational purposes only.
+
+❗ Unauthorized use may violate:
+
+1 **Computer Fraud and Abuse Act (CFAA)**
+
+2 **General Data Protection Regulation (GDPR)**
+
+3 **Local privacy laws**
+
+Always obtain written permission before testing on systems you don't own.
+
+## 💡 Pro Tips
+Bulk Processing
+```python
+# Encode all images in a folder (Linux/Mac)  
+find ./documents/ -name "*.png" | parallel python src/stego.py -e -t image -i {} -o ./secrets/{}  
+```
+Debugging
+```python
+# Verbose output  
+python src/stego.py -e -t audio -i song.wav -vvv    
+```
