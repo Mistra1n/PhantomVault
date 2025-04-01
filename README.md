@@ -1,29 +1,27 @@
-# 🔐 Advanced Steganography Tool
+# 🔐 PhantomVault - Advanced Steganography Toolkit
 
-Hide secret messages in images, audio files, and PDFs with optional AES-256 encryption.
+![Demo](examples/demo.gif)  
+*Hide messages in images, audio, and PDFs with military-grade encryption*
 
-![Demo](examples/demo.gif) *(Optional: Add screenshot/gif later)*
+---
 
 ## 🌟 Features
 
-- **Multi-format support**:
-  - 🖼️ Images (PNG, BMP)
-  - 🔊 Audio (WAV)
-  - 📄 PDF (Metadata)
-- **Military-grade security**:
-  - 🔑 AES-256 + RSA hybrid encryption
-  - 🔄 Automatic key generation
-- **User-friendly**:
-  - 🖥️ Graphical interface (Tkinter)
-  - 💻 Command-line support
-- **Reliable**:
-  - ✅ File validation
-  - 🧪 90%+ test coverage
+- **Multi-format support**  
+  🖼️ Images (PNG/BMP) | 🔊 Audio (WAV) | 📄 PDF Metadata  
+- **End-to-end encryption**  
+  🔑 AES-256 + RSA hybrid | Automatic key generation  
+- **Dual interfaces**  
+  🖥️ Graphical UI (Tkinter) | 💻 Command Line  
+- **Stealth technology**  
+  🔒 Zero file size changes | 🕵️‍♂️ No visible artifacts  
+
+---
 
 ## 🚀 Quick Start
 
 ### Installation
 ```bash
-git clone https://github.com/yourusername/Steganography-Tool.git
-cd Steganography-Tool
+git clone https://github.com/yourusername/PhantomVault.git
+cd PhantomVault
 pip install -r requirements.txt
