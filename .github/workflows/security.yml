@@ -1,0 +1,21 @@
+name: Security Scan
+
+on:
+  schedule:
+    - cron: "0 0 * * 1"  # Weekly scans
+  push:
+    branches: [main]
+
+jobs:
+  scan:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v4
+    
+    - name: Run Bandit (Python SAST)
+      uses: PyCQA/bandit@master
+      with:
+        args: -r src/ -ll
+    
+    - name: Dependency Check
+      uses: dependency-review-action@v3
