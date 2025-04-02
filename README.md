@@ -44,6 +44,8 @@ python src/stego.py -d -a -i out.wav
 ```python
 python src/gui_app.py  
 ```
+![start](https://raw.githubusercontent.com/mistr4in/Mistr4in/refs/heads/main/App.PNG)
+
 Steps:
 
 1 **Select mode (Encode/Decode)**
@@ -54,7 +56,7 @@ Steps:
 
 4 **Toggle encryption**
 
-GUI Screenshot
+![start](https://raw.githubusercontent.com/mistr4in/Mistr4in/refs/heads/main/2.PNG)
 ## CLI
 
 ```python 
