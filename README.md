@@ -41,46 +41,30 @@ python src/stego.py -e -t image -i cat.png -o secret.png -m "Kenya Zimmerman" -x
 # Decode  
 python src/stego.py -d -t image -i secret.png -k YOUR_KEY  
 ```
-## Usage
-
-```python
-# Encode a message into an image
-python src/gui_app.py  # Graphical mode
-
-# Or use CLI:
-python src/stego.py -e -t image -i input.png -o secret.png -m "My secret" --encrypt
-```
 ## Usage Guide
 **Supported  Formats**
-___
-**Format**...............**Requirements**...................Max Capacity**
+______________________
+```
+Format         Requirements       Max Capacity
+-----------------------------------------------
+Images         PNG/BMP, 24-bit     3 bits per pixel
+Audio          WAV,16-bit mono     1KB per second
+PDF            Unencrypted         Metadata only
+```
 
-**Images**...............**PNG/BMP, 24-bit**..............**3 bits per pixel**
+ Command Reference
+```
+Flag   Description's
 
-**Audio**................	**WAV,16-bit mono**	...........**1KB per second**
-
-**PDF**.....................**Unencrypted**....................	**Metadata only**
-
-## Command Reference
-
-**Flag**	******Description's******
-
-**-e	______Encode mode**
-
-**-d	______Decode mode**
-
-**-t	______Type (image,audio,pdf)**
-
-**-i	______Input file path**
-
-**-o	______Output file path**
-
-**-m	______Message to hide**
-
-**-x	______Enable encryption**
-
-
-**-k	______Decryption key**
+-e	    Encode mode
+-d	    Decode mode
+-t	    Type (image,audio,pdf)
+-i	    Input file path
+-o	    Output file path
+-m	    Message to hide
+-x	    Enable encryption
+-k	    Decryption key
+```
 
 
 
