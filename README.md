@@ -8,14 +8,12 @@
 - **Dual interfaces** - Graphical UI and command-line support 
 ## Installation
 
-Use the package manager [pip](https://pip.pypa.io/en/stable/) to install foobar.
-
 ```bash
 git clone https://github.com/mistra1n/PhantomVault.git
 cd PhantomVault
 pip install -r requirements.txt
 ```
-
+## Usage Guide
 ## GUI
 
 ```python
@@ -41,8 +39,8 @@ python src/stego.py -e -t image -i cat.png -o secret.png -m "Kenya Zimmerman" -x
 # Decode  
 python src/stego.py -d -t image -i secret.png -k YOUR_KEY  
 ```
-## Usage Guide
-**Supported  Formats**
+
+📦**Supported  Formats**
 ______________________
 ```
 Format         Requirements       Max Capacity
