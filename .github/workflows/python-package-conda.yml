@@ -11,7 +11,7 @@ jobs:
 
     steps:
     - uses: actions/checkout@v4
-    
+
     - name: Set up Conda
       uses: conda-incubator/setup-miniconda@v3
       with:
@@ -25,12 +25,20 @@ jobs:
         sudo apt-get update
         sudo apt-get install -y ffmpeg  # Required for pydub
 
-    - name: Install Python dependencies
+    - name: Install Python dependencies with Conda
       shell: bash -l {0}  # Important for Conda environments
       run: |
-        conda install -n phantomvault -c conda-forge --file requirements.txt
-        conda install -n phantomvault -c conda-forge pytest pytest-cov
-        pip install -e .
+        conda install -n phantomvault -c conda-forge --file requirements.txt || true
+
+    - name: Install missing Python dependencies with pip
+      shell: bash -l {0}  # Important for Conda environments
+      run: |
+        pip install -r requirements.txt
+
+    - name: Install additional testing dependencies
+      shell: bash -l {0}
+      run: |
+        conda install -n phantomvault -c conda-forge pytest pytest-cov || true
 
     - name: Run tests
       shell: bash -l {0}
