@@ -9,7 +9,7 @@
 ## Installation
 
 ```bash
-git clone https://github.com/mistra1n/PhantomVault.git
+git clone https://github.com/Mistra1n/PhantomVault.git
 cd PhantomVault
 pip install -r requirements.txt
 ```
